@@ -84,46 +84,42 @@ button {
             <button class="secondary" id="noBtn">No 😢</button>
         </div>
         <p id="response"></p>
+
+        <!-- Spotify Embed -->
+        <iframe id="spotifyPlayer" style="margin-top:20px" src="https://open.spotify.com/embed/track/0Zf7QbQ4nX0y3n2uTVnHq0?utm_source=generator" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media" ></iframe>
     </div>
 </div>
 
 <script>
-
 const introScreen = document.getElementById("introScreen");
 const mainScreen = document.getElementById("mainScreen");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const response = document.getElementById("response");
+const spotifyPlayer = document.getElementById("spotifyPlayer");
 
 
 function showMain() {
     introScreen.classList.add("hidden");
     mainScreen.classList.remove("hidden");
 
-    
-    const music = document.createElement("iframe");
-    music.src = "https://www.youtube.com/embed/tyKu0uZS86Q?autoplay=1&loop=1&playlist=tyKu0uZS86Q";
-    music.width = 0;
-    music.height = 0;
-    music.allow = "autoplay; encrypted-media";
-    music.frameBorder = 0;
-    document.body.appendChild(music);
+   
 }
 
-
+// Yes button
 yesBtn.addEventListener("click", () => {
     response.innerHTML = "SHE SAID YES!!! 💖✨ Best decision ever, Val 😌";
     launchConfetti();
 });
 
-
+// No button avoids clicks
 noBtn.addEventListener("mouseover", () => {
     const x = Math.random() * 300 - 150;
     const y = Math.random() * 300 - 150;
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-
+// Hearts floating
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
@@ -158,11 +154,6 @@ style.innerHTML = `
 }`;
 document.head.appendChild(style);
 </script>
-
-
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/tyKu0uZS86Q?autoplay=1&loop=1&playlist=tyKu0uZS86Q&mute=1"
-frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 </body>
 </html>
