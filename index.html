@@ -83,7 +83,7 @@ button {
     font-size: 1.3rem;
 }
 
-/* Floating hearts */
+
 .heart {
     position: absolute;
     color: rgba(255,255,255,0.6);
@@ -106,7 +106,7 @@ button {
 
 <body>
 
-<!-- Intro Screen -->
+
 <div class="screen" id="introScreen">
     <div class="container">
         <h1>Hey Val... 💕</h1>
@@ -115,7 +115,7 @@ button {
     </div>
 </div>
 
-<!-- Main Screen -->
+
 <div class="screen hidden" id="mainScreen">
     <div class="container">
         <h1>Can I be your <span class="highlight">VAL</span>entine? 💖</h1>
@@ -137,26 +137,26 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const response = document.getElementById("response");
 
-// Switch screens
+
 function showMain() {
     introScreen.classList.add("hidden");
     mainScreen.classList.remove("hidden");
 }
 
-// Yes button
+
 yesBtn.addEventListener("click", () => {
     response.innerHTML = "SHE SAID YES!!! 💖✨ Best decision ever, Val 😌";
     launchConfetti();
 });
 
-// No button runs away
+
 noBtn.addEventListener("mouseover", () => {
     const x = Math.random() * 300 - 150;
     const y = Math.random() * 300 - 150;
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-// Floating hearts
+
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
@@ -172,7 +172,7 @@ function createHeart() {
 }
 setInterval(createHeart, 500);
 
-// Confetti
+
 function launchConfetti() {
     for (let i = 0; i < 60; i++) {
         const confetti = document.createElement("div");
