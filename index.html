@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Can I Be Your VALentine? 💖</title>
-
 <style>
 body {
     margin: 0;
@@ -19,7 +18,6 @@ body {
     text-align: center;
     color: white;
 }
-
 .screen {
     position: absolute;
     width: 100%;
@@ -30,12 +28,10 @@ body {
     flex-direction: column;
     transition: opacity 0.8s ease;
 }
-
 .hidden {
     opacity: 0;
     pointer-events: none;
 }
-
 .container {
     background: rgba(255,255,255,0.2);
     padding: 40px;
@@ -44,15 +40,8 @@ body {
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
     max-width: 420px;
 }
-
-h1 {
-    font-size: 2rem;
-}
-
-.highlight {
-    color: #fff700;
-}
-
+h1 { font-size: 2rem; }
+.highlight { color: #fff700; }
 button {
     padding: 12px 25px;
     font-size: 1rem;
@@ -62,48 +51,18 @@ button {
     margin: 10px;
     transition: 0.3s;
 }
-
-.primary {
-    background-color: #ff4d6d;
-    color: white;
-}
-
-.primary:hover {
-    transform: scale(1.1);
-}
-
-.secondary {
-    background-color: #555;
-    color: white;
-    position: relative;
-}
-
-#response {
-    margin-top: 20px;
-    font-size: 1.3rem;
-}
-
-
-.heart {
-    position: absolute;
-    color: rgba(255,255,255,0.6);
-    animation: floatUp linear infinite;
-}
-
+.primary { background-color: #ff4d6d; color: white; }
+.primary:hover { transform: scale(1.1); }
+.secondary { background-color: #555; color: white; position: relative; }
+#response { margin-top: 20px; font-size: 1.3rem; }
+.heart { position: absolute; color: rgba(255,255,255,0.6); animation: floatUp linear infinite; }
 @keyframes floatUp {
-    from {
-        transform: translateY(100vh) scale(0.5);
-        opacity: 0;
-    }
+    from { transform: translateY(100vh) scale(0.5); opacity: 0; }
     50% { opacity: 1; }
-    to {
-        transform: translateY(-10vh) scale(1.2);
-        opacity: 0;
-    }
+    to { transform: translateY(-10vh) scale(1.2); opacity: 0; }
 }
 </style>
 </head>
-
 <body>
 
 
@@ -120,17 +79,16 @@ button {
     <div class="container">
         <h1>Can I be your <span class="highlight">VAL</span>entine? 💖</h1>
         <p>I promise to make you happiii, warm hugs, and a lifetime supply of mwa :3.</p>
-
         <div>
             <button class="primary" id="yesBtn">Yes 💕</button>
             <button class="secondary" id="noBtn">No 😢</button>
         </div>
-
         <p id="response"></p>
     </div>
 </div>
 
 <script>
+
 const introScreen = document.getElementById("introScreen");
 const mainScreen = document.getElementById("mainScreen");
 const yesBtn = document.getElementById("yesBtn");
@@ -141,6 +99,15 @@ const response = document.getElementById("response");
 function showMain() {
     introScreen.classList.add("hidden");
     mainScreen.classList.remove("hidden");
+
+    
+    const music = document.createElement("iframe");
+    music.src = "https://www.youtube.com/embed/tyKu0uZS86Q?autoplay=1&loop=1&playlist=tyKu0uZS86Q";
+    music.width = 0;
+    music.height = 0;
+    music.allow = "autoplay; encrypted-media";
+    music.frameBorder = 0;
+    document.body.appendChild(music);
 }
 
 
@@ -165,10 +132,7 @@ function createHeart() {
     heart.style.fontSize = Math.random() * 20 + 20 + "px";
     heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
     document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
+    setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 500);
 
@@ -183,7 +147,6 @@ function launchConfetti() {
         confetti.style.fontSize = "22px";
         confetti.style.animation = "fall 3s linear forwards";
         document.body.appendChild(confetti);
-
         setTimeout(() => confetti.remove(), 3000);
     }
 }
@@ -191,20 +154,15 @@ function launchConfetti() {
 const style = document.createElement('style');
 style.innerHTML = `
 @keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }`;
 document.head.appendChild(style);
 </script>
 
-<iframe id="bgMusic" width="0" height="0"
+
+<iframe width="0" height="0"
 src="https://www.youtube.com/embed/tyKu0uZS86Q?autoplay=1&loop=1&playlist=tyKu0uZS86Q&mute=1"
-frameborder="0"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
+frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 </body>
 </html>
